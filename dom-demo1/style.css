@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  .navbar {
+    position: relative;
+    display: inline-block;
+    left: 100px;
+    top: 100px;
+  }
+  .popover {
+    position: absolute;
+    border: 1px solid black;
+    left: 0;
+    top: 100%;
+    white-space: nowrap;
+    display: none;
+  }
+  ul li {
+    list-style-type: none;
+    margin: 5px;
+  }
+  li:hover {
+    background-color: #e5dbdb;
+  }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+</head>
+
+<body>
+  <div class="navbar">
+    <div>
+        1. 点击按钮弹出浮层  &nbsp;
+        2. 点击别处关闭浮层     &nbsp;
+        3. 点击浮层时，浮层不得关闭     &nbsp;
+        4. 再次点击按钮，浮层消失       &nbsp;
+    </div>
+    <button id="favorite">
+      点击弹出浮窗
+    </button>
+    <div id="popover" class="popover">
+      <ul>
+        <li>选项1</li>
+        <li>选项2</li>
+        <li>选线3</li>
+      </ul>
+    </div>
+  </div>
+</body>
+<script>
+    let $favorite = $("#favorite")
+    let $popover = $("#popover")
+    $favorite.on('click', function(e) {
+    if (popover.style.display == 'block') {
+        $popover.hide()
+    } else {
+        $popover.show()
+        listenToDocument()
+    }
+    })
+
+    function listenToDocument() {
+    $(document).on('click', function(e) {
+        if (e.target === $('html')[0]) {
+        $popover.hide()
+            // 只在浮层出现时监听，节约资源
+        $(document).off('click', arguments.callee)
+        }
+    })
+    }
+</script>
+</html>
