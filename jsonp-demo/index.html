@@ -16,7 +16,7 @@
     },
     button.addEventListener('click', (e)=>{
         let script = document.createElement('script');
-        script.src = 'http://liaowenhao.com:8002/pay?callbackName=xxx';
+        script.src = 'http://Jack.com:8002/pay?callbackName=xxx';
         document.body.appendChild(script)
         script.onload = function(e){ // 状态码是 200~299 则表示成功
             e.currentTarget.remove();
